@@ -6,15 +6,16 @@ const counterStore = useCounterStore();
 
 <template>
   <div class="counter-be">
-    <button @click="counterStore.decrement">Decrement</button>
+    <Button icon="pi pi-minus" @click="counterStore.decrement" />
     <b>{{ counterStore.counter }}</b>
-    <button @click="counterStore.increment">Increment</button>
+    <Button icon="pi pi-plus" @click="counterStore.increment" />
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .counter-be {
   display: flex;
-  flex-direction: row;
+  gap: 8px;
+  align-items: center;
 }
 </style>
