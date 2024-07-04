@@ -1,14 +1,20 @@
 <script setup lang="ts">
-import { useCounterStore } from "./stores/counter";
+import { useCounterStore } from '../../stores/counter';
 
 const counterStore = useCounterStore();
 </script>
 
 <template>
   <div class="counter-be">
-    <Button icon="pi pi-minus" @click="counterStore.decrement" />
+    <Button
+      icon="pi pi-minus"
+      @click="counterStore.decrement"
+    />
     <b>{{ counterStore.counter }}</b>
-    <Button icon="pi pi-plus" @click="counterStore.increment" />
+    <Button
+      icon="pi pi-plus"
+      @click="counterStore.increment"
+    />
   </div>
 </template>
 

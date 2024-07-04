@@ -1,4 +1,4 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
 export const useCounterStore = defineStore('counterStore', () => {
   const counter = ref(0);
@@ -7,4 +7,4 @@ export const useCounterStore = defineStore('counterStore', () => {
   const decrement = () => counter.value--;
 
   return { counter, increment, decrement };
-})
+});
