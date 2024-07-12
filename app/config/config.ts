@@ -20,6 +20,7 @@ export interface IConfig {
 
 class Config implements IConfig {
   constructor(private readonly cfg: ConfigType) { }
+
   isProduction(): boolean {
     return this.cfg.NODE_ENV === NodeEnvEnum.Prod;
   }
@@ -37,18 +38,16 @@ class Config implements IConfig {
   }
 }
 
-export class ConfigProvider {
-  private constructor() {
-    throw new Error('Cannot instance of static class');
-  }
+const defineConfig = () => {
+  let config: IConfig | undefined;
 
-  private static _config: IConfig;
-
-  public static get(): IConfig {
-    if (!this._config) {
-      this._config = Config.default();
+  return (): IConfig => {
+    if (!config) {
+      config = Config.default();
     }
 
-    return this._config;
-  }
-}
+    return config;
+  };
+};
+
+export const config = defineConfig();
