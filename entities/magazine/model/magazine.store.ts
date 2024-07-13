@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { type IMagazine } from '../model';
+import { type IMagazine } from './magazine.model';
 import { api } from '~/shared/api';
 
 export const magazineStore = defineStore('magazine', () => {
