@@ -11,7 +11,7 @@ export interface IMagazine {
 }
 
 export class Magazine implements IMagazine {
-  private _uid: string;
+  private readonly _uid: string;
   private _name: string;
   private _address: string;
 
